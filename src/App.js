@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import Topbar from './componentes/Topbar';
 
 class App extends Component {
   render() {
-    const { classes } = this.props;
     return (
-      <div>Ola</div>
+      <div>
+        <Topbar titulo="Pokedex" cor="secondary"/>
+      </div>
     );
   }
 }

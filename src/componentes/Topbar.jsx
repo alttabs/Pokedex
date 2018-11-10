@@ -12,9 +12,9 @@ const styles = {
 
 class Topbar extends Component {
   render() {
-    const { classes, titulo } = this.props;return (
+    const { classes, titulo, cor } = this.props;return (
       <div className={classes.root}>
-        <AppBar position="static" color="default">
+        <AppBar position="fixed" color={cor}>
           <Toolbar>
             <Typography variant="h6" color="inherit">
               {titulo}
@@ -26,5 +26,5 @@ class Topbar extends Component {
   }
 }
 
-export default withStyles(styles)(App);
+export default withStyles(styles)(Topbar);
 
