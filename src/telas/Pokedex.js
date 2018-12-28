@@ -19,7 +19,7 @@ const listaPokemons = () => [1, 2, 3, 10, 88, 100,700,345, 500].map(id =>
     render() {
       return (
         <div>
-          <Topbar titulo="Pokedex" cor="blue-light "/>
+          <Topbar titulo="Pokedex" cor="blue"/>
           <div style={{marginTop: 72}}> {listaPokemons(this.props)}</div>
         </div>
       );

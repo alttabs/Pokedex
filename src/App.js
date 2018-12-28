@@ -10,7 +10,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Topbar titulo="Pokedex" cor="secondary"/>
+        <Topbar titulo="Pokedex" cor="primary"/>
         <div style={{marginTop: 72}}>
         {listaPokemons()}</div>
         </div>

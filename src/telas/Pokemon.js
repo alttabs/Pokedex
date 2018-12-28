@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import Topbar from '../componentes/Topbar';
-import PokemonCard from '../componentes/PokemonCard';
-import Pokemon from './Pokedex';
 
 class Pokemon extends Component {
   render() {

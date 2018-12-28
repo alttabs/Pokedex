@@ -1,14 +1,13 @@
 import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import Avatar from '@material-ui/core/Avatar';
 
 class PokemonCard extends React.Component{
     state = { 
-        foto:'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/133.png',
-        nome: 'eevee'
-        };    
+        data: []
+        };  
+      
        
     componentDidMount(){
     this.carregarPokemon();
@@ -26,7 +25,7 @@ class PokemonCard extends React.Component{
     componet
     render() {
         const {foto, nome} = this.state;
-        console.log('Renderizei');
+
         return (   
             <Card style={{margin:16}}>        
               <CardHeader
