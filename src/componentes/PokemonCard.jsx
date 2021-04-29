@@ -3,6 +3,8 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import Avatar from '@material-ui/core/Avatar';
 import posed from "react-pose";
+import { Typography } from '@material-ui/core';
+
 
 const EaseOne = [0.25, 0.1, 0.25, 1.0];
 
@@ -17,11 +19,6 @@ const Content = posed.div({
             ease: EaseOne
         }
     }
-});
-
-const InnerForm = posed.div({
-    open: { opacity: 1 },
-    closed: { opacity: 0 }
 });
 
 class PokemonCard extends React.Component {
@@ -41,19 +38,24 @@ class PokemonCard extends React.Component {
         const data = await response.json();
         const nome = data.name.charAt(0).toUpperCase() + data.name.slice(1);
         const foto = data.sprites.front_default;
-        this.setState({ nome, foto });
+        const skills = data.moves.map(item => ' ' + item.move.name).toString();
+        const type = data.types.map(item => ' ' + item.type.name).toString();
+        const weight = data.weight / 10;
+        const height = data.height / 10;
+
+        this.setState({ nome, foto, skills, type, weight, height });
 
 
     };
 
     component
     render() {
-        const { foto, nome } = this.state;
+        const { foto, nome, type, skills, weight, height } = this.state;
         const { open } = this.state;
 
 
         return (
-            <Card style={{ margin: 16 }}>
+            <Card style={{ margin: 15, Width: 275, maxWidth: 275 }}>
                 <CardHeader
                     avatar={<Avatar style={{ width: 64, height: 64 }} src={foto} />}
                     title={nome}
@@ -62,7 +64,12 @@ class PokemonCard extends React.Component {
                 <Content
                     className="content"
                     pose={open === "closed" ? "open" : "closed"}>
-                    oi
+                    <Typography style={{ margin: 12 }}>Type: {type}</Typography>
+                    <Typography style={{ margin: 12 }} variant="body2" component="p">
+                        Weight: {weight}Kg
+                        Height: {height}m
+                    </Typography>
+                    <Typography style={{ margin: 12 }} variant="body2" color="textSecondary" component="p" >Skills: {skills}</Typography >
                 </Content>
             </Card>
         )

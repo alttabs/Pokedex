@@ -14,6 +14,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start; 
+  flex-grow: 4;
 }
 
 code {
