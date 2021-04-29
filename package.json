@@ -8,6 +8,7 @@
     "react": "^16.6.1",
     "react-count-to": "^0.12.0",
     "react-dom": "^16.6.1",
+    "react-pose": "^4.0.10",
     "react-scripts": "2.1.1"
   },
   "scripts": {
