@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Topbar from './componentes/Topbar';
 import PokemonCard from './componentes/PokemonCard';
 
-const listaPokemons = () => [1, 2, 3, 10, 11, 12, 13, 14, 15, 16, 88, 100 ,700,345, 500, 501, 502, 700].map(id => 
+const listaPokemons = () => Array.from({length: 150}, (_, i) => i + 1)
+.map(id => 
 {return<PokemonCard key={id} pokemonId={id}/>;
 });
 
