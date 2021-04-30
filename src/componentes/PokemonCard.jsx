@@ -33,7 +33,6 @@ class PokemonCard extends React.Component {
     }
 
     carregarPokemon = async () => {
-        console.log(this.props.pokemonId);
         const response = await fetch(`api/v2/pokemon/${this.props.pokemonId}/`);
         const data = await response.json();
         const nome = data.name.charAt(0).toUpperCase() + data.name.slice(1);
