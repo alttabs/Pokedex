@@ -54,7 +54,7 @@ class PokemonCard extends React.Component {
 
 
         return (
-            <Card style={{ margin: 15, Width: 275, maxWidth: 275 }}>
+            <Card style={{ margin: 15, Width: 275, maxWidth: 275, minWidth: 275 }}>
                 <CardHeader
                     avatar={<Avatar style={{ width: 64, height: 64 }} src={foto} />}
                     title={nome}
